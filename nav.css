@@ -1,138 +1,286 @@
-/* eXeLearning Style Designer Compatible Style */
-body{padding:0;text-align:center}
-#content{width:100%;margin:0 auto;text-align:left;position:relative;border-style:solid;border-width:0}
-#main-wrapper{padding-bottom:1.5em;width:100%;*width:auto}/* * is for IE6 and IE7 */
-#main{padding:20px 40px 30px 320px;height:auto!important;height:200px;min-height:200px;*padding-left:0}
+/* MAIN CONTENT STYLES */
+#content {
+}
 
-.no-nav #main-wrapper{width:100%}
-.no-nav #main{padding:20px 20px 0 20px}
+#main-wrapper{
+	margin-left: 285px;
+	margin-top: 0px;
+}
 
-#header,#emptyHeader{border-top-width:0;border-right-width:0;border-left-width:0}
-#headerContent{overflow:hidden;white-space:nowrap;text-overflow:ellipsis;min-height:1.1em}
-#nodeDecoration{background:none;padding:0;border:none;margin:20px 0;height:auto;min-height:0}
-#nodeTitle{font-weight:300}
-.iDevice_wrapper{margin-top:-10px}
+#main{
+}
 
-/* Menú */
-#siteNav{width:280px;float:left;margin-right:40px}
-#siteNav ul,#siteNav li{margin:0;padding:0;list-style:none}
-#siteNav .other-section{display:none}
-#siteNav a{display:block;padding:8px 10px 8px 20px;border-width:0 0 1px 0;border-style:solid}
-#siteNav .active{font-weight:bold;text-decoration:underline}
-#siteNav ul ul a{padding-left:35px;font-size:.95em}
-#siteNav ul ul ul a{padding-left:60px}
-#siteNav .daddy span{display:none}
+#main #nodeDecoration {
+	padding-top: 0px;
+}
 
-/* IE6 */
-* html #siteNav a{display:inline-block;width:250px}
-* html #siteNav ul ul a{width:235px}
-* html #siteNav ul ul ul a{width:190px}
-* html #main{padding:20px 20px 0 0}
+/* ITE elements */
+#siteNav {
+	width: 250px;
+	float: left;
+	margin-top: 0px;
+	text-align:left;
+	position:fixed;
+	font-family: Helvetica, sans-serif;
+	background-color: rgba(4,64,133,0.5);
+	border-radius: 10px;
+	padding: 10px;
+	margin-right: 1em;
+}
 
-#siteFooter{padding:0 20px 20px 20px;border:0}
-/* Pagination */
-.pagination{text-align:right;border-top:1px solid;font-size:.95em;padding:20px 0}
-.pagination .sep{display:none}
-.pagination a{display:inline-block;padding:5px 10px;border-radius:5px;margin-left:20px}
-.pagination a:hover,.pagination a:focus{text-decoration:none}
-#topPagination{position:absolute;top:0;right:20px}
-#topPagination .pagination{border:none}
-#bottomPagination{clear:both}
-#bottomPagination a{margin:0 20px 0 0}
+#siteNav ul,#siteNav li{
+	margin:2px 0 2px 0;
+	padding:0;
+	list-style:none;
+}
 
-/* Autoclear */
-#content{overflow:auto}
+#siteNav a {
+	display: block;
+	padding: 4px 0 4px 20px;
+	color: #044085;
+	background-color: #DEEDFA;
+	text-decoration: none;
+	border-radius: 1em;
+}
+
+#siteNav a:hover {
+	color: #044085;
+	background-color:#C3DCF7;
+	font-weight: bold;
+}
+
+#siteNav #active .active {
+	background-color: #C3DCF7;
+	color: #044085;
+	background-image:url(active_bg.gif);
+	background-position: 2px 4px;
+	background-repeat:no-repeat;
+	font-weight: bold;
+}
+#siteNav a{
+
+}
+
+/* Hide from IE5-mac. Only IE-win sees this. Fixes the peek-a-boo bug!!! */
+* html #siteNav {
+	margin-right: 10px;
+}
+
+#siteNav ul ul a{
+	display: block;
+	border: 0 !important;
+	margin-left: 0.5em;
+	padding: 4px 0 4px 20px;
+}
+#siteNav ul ul ul a{
+	display: block;
+	border: 0 !important;
+	margin-left: 1em;
+	padding: 4px 0 4px 20px;
+}
+#siteNav ul ul ul ul a{
+	display: block;
+	border: 0 !important;
+	margin-left: 1.5em;
+	padding: 4px 0 4px 20px;
+}
+
+#siteNav .other-section{
+	display:none; /* Remove if you want all levels to be displayed */
+}
+
+.pagination{
+	text-align:right;
+}
+
+.pagination .prev{
+	color: #044085;
+	background-color: #DEEDFA;
+	padding: 4px 4px 4px 18px;
+	font-weight: bold;
+	border-radius: 1em 0 0 1em;
+}
+.pagination .prev:hover{
+	color: #044085;
+	background-color:#C3DCF7;
+	text-decoration: none;
+}
+.pagination .next{
+	color: #044085;
+	background-color: #DEEDFA;
+	padding: 4px 18px 4px 4px;
+	font-weight: bold;
+	border-radius: 0 1em 1em 0;
+}
+.pagination .next:hover{
+	color: #044085;
+	background-color:#C3DCF7;
+	text-decoration: none;
+}
+
+/* Invisible content (visible for screen reader users) */
+#topPagination{
+	position:absolute;
+	overflow:hidden;
+	clip:rect(0,0,0,0);
+	height:0;
+}
+
+#bottomPagination{
+    padding:0 20px 20px 0;
+    color:#fff;
+}
 
 /* Hide/Show/Skip navigation */
-#nav-toggler{margin:0;position:absolute;top:20px;left:20px;font-size:.95em}
-#nav-toggler a,#skipNav a{padding:5px 10px;border-radius:5px}
-#nav-toggler a{display:block}
-#nav-toggler a:hover{text-decoration:none}
-#skipNav{z-index:100px;padding-top:15px;text-align:center}
+#nav-toggler {
+	position: relative;
+	z-index:999;
+}
+#nav-toggler a {
+	position: fixed;
+	top:1em; 
+	right:1em;
+}
+#nav-toggler {
+	margin:0px 0px -1em;
+	float:right;
+	top:0px;
+	left:0px;
+	position: relative;
+	z-index:999;
+}
+#nav-toggler a,#skipNav a{
+	padding:4px 7px;
+	border-radius:5px;
+	width: 30px;
+	height: 20px;
+	color: rgba(255, 255, 255, 0);
+	border-radius: 0.5em;
+	background-color: #C3DCF7;
+	box-shadow: 0px 0px 10px 1px rgba(0, 90, 138, 0.3);
+	background: url("icono-menu.png") no-repeat 12px 7px #C3DCF7;
+	position: fixed;top:1em; right:1em;
+}
+#nav-toggler a:hover,#nav-toggler a:focus{
+	background-color:#C3DCF7;
+	color: transparent;
+	text-decoration:none
+	}
+#skipNav{
+	z-index:100px;
+	padding-top:10px;
+	text-align:center;
+	width: 10em;
+}
 
-@media screen and (max-width: 980px) {
-	.exe-web-site #content{width:100%;border:0;box-shadow:none}
-	#main{padding:20px 30px 0 280px}
-	#siteNav{width:250px;margin-right:30px}
+
+.no-nav #main-wrapper {margin: 0px;}
+
+@media screen and (min-width: 701px) and (max-width: 1015px) {
+	/* Fullsreen mode */
+	body{
+	}
+	#content{
+	}
+	/* Horizontal navigation */
+	#main-wrapper{
+		width:100%;
+		margin-left:0px;
+	}
+	#siteNav .current-page-parent {
+		background-color: #C3DCF7;
+		color: #044085;
+		background-image:url(active_bg.gif);
+		background-position: 2px 4px;
+		background-repeat:no-repeat;
+		font-weight: bold;
+		border-radius: 1em;
+	}
+	#siteNav  li  li {
+		margin-left:1em;
+		width: 12.5em;
+	}
+	#siteNav  ul li li a, #siteNav  ul li li li a {
+		margin-left: 0em;
+	}
+	#siteNav li ul ul {
+		margin:-2.5em 0 0 12.5em;
+		padding-left: 0em;
+	}
+	#siteNav {
+		z-index:999;
+		position:relative;
+		background-color: rgba(4,64,133,0.5);
+		border-radius: 10px;
+		width:100%;
+		list-style:none;
+		padding:0;
+		line-height:1.2em;
+	}
+	#siteNav ul {
+		float:left;
+		width:100%;
+		padding: 10px;
+	}
+	#siteNav ul ul {
+		background-color: rgba(4,64,133,0.5);
+		border-radius: 10px;
+		padding-left: 0em;
+	}
+	#siteNav a {
+		display:block;
+		padding:0.4em 1.2em;
+	}
+	#siteNav li {
+		float:left;
+		margin-left:0.5em;
+	}
+	#siteNav li ul {
+		position:absolute;
+		left:-999em;
+		height:auto;
+		width:14em;
+	}
+	#siteNav li:hover ul ul,#siteNav li:hover ul ul ul,#siteNav li.sfhover ul ul,#siteNav li.sfhover ul ul ul {
+		left:-999em
+	}
+	#siteNav li:hover ul,#siteNav li li:hover ul,#siteNav li li li:hover ul,#siteNav li.sfhover ul,#siteNav li li.sfhover ul,#siteNav li li li.sfhover ul {
+		left:auto;
+		display:block;
+	}
+	#toggle-nav{
+		display:none;
+	}
 }
 
 @media all and (max-width: 700px) {
-	#headerContent{font-size:.7em;white-space:normal}
-	#topPagination{display:none}
-	#siteNav{float:none;width:100%;padding:0}
-	#siteNav{line-height:1.5em;margin-bottom:15px}
-	#main-wrapper{width:100%;float:none}    
-	#main,.no-nav #main{padding:10px 20px 0 20px}    
-	#content .exe-col{float:none;width:100%;padding:0}
-	.pagination{text-align:center;height:35px;position:relative}
-	.pagination .prev{position:absolute;left:20px}
-	.pagination .next{position:absolute;right:0}
-	#nav-toggler{position:relative;top:0;left:0;margin:20px 19px;text-align:center}
-	#nav-toggler a{width:100%;display:block;padding:8px 0}
-	#siteNav{border-top:1px solid}
-}
 
-@media print{
-	#siteNav,#nav-toggler,.noprt,.toggle-idevice{display:none}
-	#main{padding:20px 0}
-	body #content{background:#FFF}
-	#headerContent{white-space:normal;text-overflow:normal;font-weight:bold}
-}
-
-/* eXeLearning Style Designer */
-#content{
-/*contentBGColor*/
-background-color:#f9f9f9;
-}
-.pagination a,#nav-toggler a,#skipNav a{
-/*nav2BGColor*/
-background-color:#333333;
-/*nav2AColor*/
-color:#ffffff;
-}
-.pagination a:hover,.pagination a:focus,#nav-toggler a:hover{
-/*nav2HoverBGColor*/
-background-color:#555555;
-}
-body{
-/*bodyBGColor*/
-background-color:#ffffff;
-}
-#siteNav,#siteNav a{
-/*navBGColor*/
-background-color:#f9f9f9;
-/*navAColor*/
-color:#555555;
-/*navBorderColor*/
-border-color:#dddddd;
-}
-@media screen and (min-width: 701px) and (max-width: 1015px){
-#siteNav,#siteNav ul{
-background-color:#f9f9f9;border-color:#dddddd;
-}
-#siteNav li{
-background-color:#f9f9f9;
-}
-}
-@media all and (max-width: 700px){
-.js #siteNav{
-border-top:1px solid #dddddd;
-}
-}
-#siteNav a:hover,#siteNav a:focus{
-/*navHoverBGColor*/
-background-color:#ffffff;
-/*navAHoverColor*/
-color:#000000;
-}
-@media screen and (min-width: 701px) and (max-width: 1015px){
-#siteNav li:hover,#siteNav li.sfhover{
-background-color:#ffffff;
-}
-}
-.pagination{
-border-color:#dddddd;
-}
-#bottomPagination{
-background-color:#ffffff;
+	#content .exe-col {
+		float:none;
+		width:100%;
+		padding:0;
+	}
+	table {
+		max-width:100%;
+	}
+	#siteNav {
+		float: none;
+		display: block;
+		clear: both;
+		padding: 0px;
+		position: fixed;
+		margin-left: auto;
+		margin-right: auto;
+		width: 200px;
+		background-color: rgba(4,64,133,0.5);
+		border-radius: 10px;
+		padding: 10px;
+		z-index:99;
+	}
+	body {
+		font-size: 0.9em;
+	}
+	#main-wrapper {
+		margin-left: 0px;
+	}
 }

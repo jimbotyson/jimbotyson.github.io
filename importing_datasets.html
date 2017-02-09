@@ -12,8 +12,7 @@
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
 <script type="text/javascript" src="common.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
 <body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
@@ -24,14 +23,22 @@
    <li class="current-page-parent"><a href="data_management_and_descriptive_statistics.html" class="current-page-parent daddy">Data management and descriptive statistics</a>
    <ul>
       <li><a href="r_and_rstudio.html" class="no-ch">R and RStudio</a></li>
-      <li><a href="help.html" class="no-ch">Help</a></li>
+      <li><a href="help.html" class="daddy">Help</a>
+      <ul class="other-section">
+         <li><a href="pop_quiz.html" class="no-ch">Pop Quiz!</a></li>
+      </ul>
+      </li>
       <li><a href="the_interface.html" class="no-ch">The interface</a></li>
-      <li><a href="add_on_packages.html" class="no-ch">Add on packages</a></li>
+      <li><a href="add_on_packages.html" class="daddy">Add on packages</a>
+      <ul class="other-section">
+         <li><a href="finding_useful_packages.html" class="no-ch">Finding useful packages</a></li>
+      </ul>
+      </li>
       <li><a href="basic_command_line_statements.html" class="no-ch">Basic command line statements</a></li>
       <li id="active"><a href="importing_datasets.html" class="active no-ch">Importing datasets</a></li>
       <li><a href="some_r_data_structures_and_data_selection.html" class="daddy">Some R data structures and data selection</a>
       <ul class="other-section">
-         <li><a href="first_task.html" class="no-ch">First task</a></li>
+         <li><a href="a_data_selection_challenge.html" class="no-ch">A data selection challenge</a></li>
       </ul>
       </li>
       <li><a href="basic_data_manipulation_routines_in_r.html" class="daddy">Basic data manipulation routines in R</a>
@@ -44,12 +51,12 @@
          </ul>
          </li>
          <li><a href="factors_levels_and_labels.html" class="no-ch">Factors, levels and labels</a></li>
-         <li><a href="second_task.html" class="no-ch">Second task</a></li>
+         <li><a href="consolidation_task.html" class="no-ch">Consolidation task</a></li>
       </ul>
       </li>
       <li><a href="summary_statistics.html" class="daddy">Summary statistics</a>
       <ul class="other-section">
-         <li><a href="third_task.html" class="no-ch">Third task</a></li>
+         <li><a href="task_describing_shape.html" class="no-ch">Task: describing shape</a></li>
       </ul>
       </li>
    </ul>
@@ -94,7 +101,15 @@
 <h1 id="import-datasets-in-to-the-rstudio-workspace-from-plain-text-and-excel-file-formats">Importing datasets in to the RStudio workspace from plain text and Excel file formats</h1>
 <p>You can import data into R from a file containing plain text. The file should contain data that can be understood as cases and variables. Most commonly, the file will contain cases in rows and variables in columns. The columns should be separated by some character - often a tab or a comma.</p>
 <p>Here is an example, just the first few lines of a file where the columns are separated by commas:</p>
-<p>patient,gender,surname,age,postcode,income,smoker,hbefore,hafter<br />735745,1,ROBBINS,32,KT13,46000,N,94.58,88.79<br />1009009,2,MCGREGOR,33,KY1,58000,N,106.12,78.25<br />845260,2,KUMAR,38,FY7,47000,Y,88.11,102.45<br />780768,1,ALLINSON-HENRY,51,KA11,55000,N,83.62,63.82<br />1176135,2,OLDER,44,DE23,28000,N,72.31,77.50<br />1275041,1,BERRY,41,S80,28000,Y,84.37,68.21<br />845772,1,SMITH,56,BT43,61000,N,76.95,81.47</p>
+<table border="1">
+<tbody>
+<tr>
+<td>patient,gender,surname,age,postcode,income,smoker,hbefore,hafter<br />735745,1,ROBBINS,32,KT13,46000,N,94.58,88.79<br />1009009,2,MCGREGOR,33,KY1,58000,N,106.12,78.25<br />845260,2,KUMAR,38,FY7,47000,Y,88.11,102.45<br />780768,1,ALLINSON-HENRY,51,KA11,55000,N,83.62,63.82<br />1176135,2,OLDER,44,DE23,28000,N,72.31,77.50<br />1275041,1,BERRY,41,S80,28000,Y,84.37,68.21<br />845772,1,SMITH,56,BT43,61000,N,76.95,81.47</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p></p>
 <p>It isn’t very easy to understand set out like this, so let’s line up the columns visually:</p>
 <table>
 <tbody>
@@ -210,4 +225,4 @@
 </nav>
 </div>
 </div>
-<script type="text/javascript" src="_style_js.js"></script></body></html>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

@@ -14,8 +14,7 @@
 <script type="text/javascript" src="exe_effects.js"></script>
 <script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
 <script type="text/javascript" src="common.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
 <body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
@@ -26,14 +25,22 @@
    <li class="current-page-parent"><a href="data_management_and_descriptive_statistics.html" class="current-page-parent daddy">Data management and descriptive statistics</a>
    <ul>
       <li><a href="r_and_rstudio.html" class="no-ch">R and RStudio</a></li>
-      <li><a href="help.html" class="no-ch">Help</a></li>
+      <li><a href="help.html" class="daddy">Help</a>
+      <ul class="other-section">
+         <li><a href="pop_quiz.html" class="no-ch">Pop Quiz!</a></li>
+      </ul>
+      </li>
       <li><a href="the_interface.html" class="no-ch">The interface</a></li>
-      <li><a href="add_on_packages.html" class="no-ch">Add on packages</a></li>
+      <li><a href="add_on_packages.html" class="daddy">Add on packages</a>
+      <ul class="other-section">
+         <li><a href="finding_useful_packages.html" class="no-ch">Finding useful packages</a></li>
+      </ul>
+      </li>
       <li id="active"><a href="basic_command_line_statements.html" class="active no-ch">Basic command line statements</a></li>
       <li><a href="importing_datasets.html" class="no-ch">Importing datasets</a></li>
       <li><a href="some_r_data_structures_and_data_selection.html" class="daddy">Some R data structures and data selection</a>
       <ul class="other-section">
-         <li><a href="first_task.html" class="no-ch">First task</a></li>
+         <li><a href="a_data_selection_challenge.html" class="no-ch">A data selection challenge</a></li>
       </ul>
       </li>
       <li><a href="basic_data_manipulation_routines_in_r.html" class="daddy">Basic data manipulation routines in R</a>
@@ -46,12 +53,12 @@
          </ul>
          </li>
          <li><a href="factors_levels_and_labels.html" class="no-ch">Factors, levels and labels</a></li>
-         <li><a href="second_task.html" class="no-ch">Second task</a></li>
+         <li><a href="consolidation_task.html" class="no-ch">Consolidation task</a></li>
       </ul>
       </li>
       <li><a href="summary_statistics.html" class="daddy">Summary statistics</a>
       <ul class="other-section">
-         <li><a href="third_task.html" class="no-ch">Third task</a></li>
+         <li><a href="task_describing_shape.html" class="no-ch">Task: describing shape</a></li>
       </ul>
       </li>
    </ul>
@@ -84,16 +91,28 @@
 </nav>
 <div id='topPagination'>
 <nav class="pagination noprt">
-<a href="add_on_packages.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="importing_datasets.html" class="next"><span>Next<span> &raquo;</span></span></a>
+<a href="finding_useful_packages.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="importing_datasets.html" class="next"><span>Next<span> &raquo;</span></span></a>
 </nav>
 </div>
 <div id="main-wrapper">
 <section id="main">
 <header id="nodeDecoration"><h1 id="nodeTitle">Basic command line statements</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id62">
+<div class="iDevice emphasis0">
+<div id="ta62_85" class="block iDevice_content">
+<p>In this section we encounter two new procedures:</p>
+<ol>
+<li>creating data objects and assigning them to variable names;</li>
+<li>making simple selections of values from data objects.</li>
+</ol>
+<p>At the end of the section is a short consolidation task.</p>
+</div>
+</div>
+</article>
 <article class="iDevice_wrapper FreeTextIdevice" id="id7">
 <div class="iDevice emphasis0">
 <div id="ta7_85" class="block iDevice_content">
-<div class="exe-fx exe-accordion">
+<div class="exe-fx exe-tabs">
 <h2>Creating simple data objects</h2>
 <p>You should open RStudio on your computer and try out the commands in this section as you go.  You can copy the actual code if you want to avoid a lot of typing.</p>
 <p>The console when it is ready for you to enter a command shows a prompt:</p>
@@ -120,7 +139,6 @@ sum(2,3,4,5,6,7,8,9,1,10)/10
 sum(2,3,4,5,6,7,8,9,1,10)/10
 &lt;/code&gt;&lt;/pre&gt;"> sum(2,3,4,5,6,7,8,9,1,10)/10 </code></p>
 <p>R acts as a simple calculator here and it returns the result of its calculation to the screen for us.</p>
-<p><a target="_blank" href="http://www.sr.bham.ac.uk/%7Eajrs/R/r-function_list.html">This page</a> has a list of useful R language functions. You will find it very useful when you start on the exercises.</p>
 <p>But what is the [1] telling us?</p>
 <p>To understand this we must understand what a <em>vector</em> is.  A <em>vector</em> is a collection of elements of the same basic type (for example of numbers or of characters of the alphabet). Vectors are fundamental to the way R works.</p>
 <p>When R presents the result of a calculation it presents you with a<em> vector</em>.  A <a href="https://en.wiktionary.org/wiki/scalar" target="_blank"><em>scalar</em></a> answer is actually a vector of length one. When R displays this data for us, it will wrap the data lines to fit your window width. The number in square brackets at the beginning of each line tells you with which element that line begins (the first, tenth, etc). It is entirely cosmetic.</p>
@@ -261,8 +279,8 @@ sum(2,3,4,5,6,7,8,9,1,10)/10
 </div>
 <div id='bottomPagination'>
 <nav class="pagination noprt">
-<a href="add_on_packages.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="importing_datasets.html" class="next"><span>Next<span> &raquo;</span></span></a>
+<a href="finding_useful_packages.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="importing_datasets.html" class="next"><span>Next<span> &raquo;</span></span></a>
 </nav>
 </div>
 </div>
-<script type="text/javascript" src="_style_js.js"></script></body></html>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

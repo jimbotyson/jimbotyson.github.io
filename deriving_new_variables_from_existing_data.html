@@ -12,8 +12,7 @@
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
 <script type="text/javascript" src="common.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
 <body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
@@ -24,14 +23,22 @@
    <li class="current-page-parent"><a href="data_management_and_descriptive_statistics.html" class="current-page-parent daddy">Data management and descriptive statistics</a>
    <ul>
       <li><a href="r_and_rstudio.html" class="no-ch">R and RStudio</a></li>
-      <li><a href="help.html" class="no-ch">Help</a></li>
+      <li><a href="help.html" class="daddy">Help</a>
+      <ul class="other-section">
+         <li><a href="pop_quiz.html" class="no-ch">Pop Quiz!</a></li>
+      </ul>
+      </li>
       <li><a href="the_interface.html" class="no-ch">The interface</a></li>
-      <li><a href="add_on_packages.html" class="no-ch">Add on packages</a></li>
+      <li><a href="add_on_packages.html" class="daddy">Add on packages</a>
+      <ul class="other-section">
+         <li><a href="finding_useful_packages.html" class="no-ch">Finding useful packages</a></li>
+      </ul>
+      </li>
       <li><a href="basic_command_line_statements.html" class="no-ch">Basic command line statements</a></li>
       <li><a href="importing_datasets.html" class="no-ch">Importing datasets</a></li>
       <li><a href="some_r_data_structures_and_data_selection.html" class="daddy">Some R data structures and data selection</a>
       <ul class="other-section">
-         <li><a href="first_task.html" class="no-ch">First task</a></li>
+         <li><a href="a_data_selection_challenge.html" class="no-ch">A data selection challenge</a></li>
       </ul>
       </li>
       <li class="current-page-parent"><a href="basic_data_manipulation_routines_in_r.html" class="current-page-parent daddy">Basic data manipulation routines in R</a>
@@ -44,12 +51,12 @@
          </ul>
          </li>
          <li><a href="factors_levels_and_labels.html" class="no-ch">Factors, levels and labels</a></li>
-         <li><a href="second_task.html" class="no-ch">Second task</a></li>
+         <li><a href="consolidation_task.html" class="no-ch">Consolidation task</a></li>
       </ul>
       </li>
       <li><a href="summary_statistics.html" class="daddy">Summary statistics</a>
       <ul class="other-section">
-         <li><a href="third_task.html" class="no-ch">Third task</a></li>
+         <li><a href="task_describing_shape.html" class="no-ch">Task: describing shape</a></li>
       </ul>
       </li>
    </ul>
@@ -91,7 +98,7 @@
 <article class="iDevice_wrapper FreeTextIdevice" id="id17">
 <div class="iDevice emphasis0">
 <div id="ta17_85" class="block iDevice_content">
-<p>We have a data set <em>results</em> (download link below) that has six variables.  Ignoring the surname variable, we have:</p>
+<p>We have a data frame <em>results</em> (download link below) that has six variables.  Ignoring the surname variable, we have:</p>
 <table>
 <tbody>
 <tr>
@@ -128,14 +135,13 @@
 </table>
 <p>You should use the R function <em>str()</em> and compare its output with this table.</p>
 <p>The variables <em>maths</em>,<em>english</em>,<em>history</em> are examination scores out of 100. The <em>class</em> variable simply tells us which of three teachers taught the pupils. The <em>gender</em> variable is a binary female/male distinction with 1 = female and 2 = male.</p>
-<p>We want to create and add a variable <em>avxm</em> which is the average of the three examination scores. We run the following code:</p>
-<pre><code data-origin="&lt;pre&gt;&lt;code&gt;avxm&amp;lt;-sum(maths,english,history)/3
-&lt;/code&gt;&lt;/pre&gt;">avxm&lt;-sum(maths,english,history)/3
-</code></pre>
+<p>To select a specific column (usually that is a variable) from a data frame, we use the <em>column</em> or <em>component selector</em> <strong>$</strong>.  In this data frame the column containing maths scores can be referred to by the expression <em>results$maths</em>.  This is a shorthand for writing a selection statement for all the rows in the fourth column.</p>
+<p>We want to create and add a variable <em>avxm</em> which is the average of the three examination scores. We could run the following code:</p>
+<p><code>avxm&lt;-(results$maths+results$english+results$history)/3 </code></p>
 <p>and add it to the dataframe with</p>
-<pre><code data-origin="&lt;pre&gt;&lt;code&gt;cbind(results,avxm)
-&lt;/code&gt;&lt;/pre&gt;">cbind(results,avxm)
-</code></pre>
+<p><code>cbind(results,avxm)</code></p>
+<p>Or we could achieve the same end with one line:</p>
+<p><code>results$avxm &lt;- <code>(results$maths+results$english+results$history)/</code><br /></code></p>
 </div>
 </div>
 </article>
@@ -160,4 +166,4 @@
 </nav>
 </div>
 </div>
-<script type="text/javascript" src="_style_js.js"></script></body></html>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

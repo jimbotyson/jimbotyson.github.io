@@ -12,8 +12,7 @@
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
 <script type="text/javascript" src="common.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
 <body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
@@ -24,14 +23,22 @@
    <li><a href="data_management_and_descriptive_statistics.html" class="daddy">Data management and descriptive statistics</a>
    <ul class="other-section">
       <li><a href="r_and_rstudio.html" class="no-ch">R and RStudio</a></li>
-      <li><a href="help.html" class="no-ch">Help</a></li>
+      <li><a href="help.html" class="daddy">Help</a>
+      <ul class="other-section">
+         <li><a href="pop_quiz.html" class="no-ch">Pop Quiz!</a></li>
+      </ul>
+      </li>
       <li><a href="the_interface.html" class="no-ch">The interface</a></li>
-      <li><a href="add_on_packages.html" class="no-ch">Add on packages</a></li>
+      <li><a href="add_on_packages.html" class="daddy">Add on packages</a>
+      <ul class="other-section">
+         <li><a href="finding_useful_packages.html" class="no-ch">Finding useful packages</a></li>
+      </ul>
+      </li>
       <li><a href="basic_command_line_statements.html" class="no-ch">Basic command line statements</a></li>
       <li><a href="importing_datasets.html" class="no-ch">Importing datasets</a></li>
       <li><a href="some_r_data_structures_and_data_selection.html" class="daddy">Some R data structures and data selection</a>
       <ul class="other-section">
-         <li><a href="first_task.html" class="no-ch">First task</a></li>
+         <li><a href="a_data_selection_challenge.html" class="no-ch">A data selection challenge</a></li>
       </ul>
       </li>
       <li><a href="basic_data_manipulation_routines_in_r.html" class="daddy">Basic data manipulation routines in R</a>
@@ -44,12 +51,12 @@
          </ul>
          </li>
          <li><a href="factors_levels_and_labels.html" class="no-ch">Factors, levels and labels</a></li>
-         <li><a href="second_task.html" class="no-ch">Second task</a></li>
+         <li><a href="consolidation_task.html" class="no-ch">Consolidation task</a></li>
       </ul>
       </li>
       <li><a href="summary_statistics.html" class="daddy">Summary statistics</a>
       <ul class="other-section">
-         <li><a href="third_task.html" class="no-ch">Third task</a></li>
+         <li><a href="task_describing_shape.html" class="no-ch">Task: describing shape</a></li>
       </ul>
       </li>
    </ul>
@@ -93,7 +100,27 @@
 <div id="ta54_85" class="block iDevice_content">
 <p>The simple linear regression model and the multiple inear regression model introduced in previous sections can be augmented by the introduction of <em>categorical</em> predictor variables.</p>
 <p>The coefficient of a continuous predictor - for example score in <em>maths</em> - is understood as the slope of he least squares best fit line and in the line for the equation appears as multiplier of the independent variable.</p>
-<p>The categorical predictors are interpreted slightly differently.  We will imagine using <em>dummy coding</em> to create our model.  In <em>dummy coding</em> we take a variable - let us use gender as an example - and recode it as a new variable <em>female</em> with values <em>0</em> for a male subject and <em>1</em> for a female subject.  The coefficient calculated for this, then, represents the <em>difference</em> in scores between subjects with a <em>zero</em> score and those with a score of one.  The same logic holds for variables with more than two levels.</p>
+<p>The categorical predictors are interpreted slightly differently.  We will imagine using <em>dummy coding</em> to create our model.  In <em>dummy coding</em> we take a variable - let us use gender as an example - and recode it as a new variable <em>female</em> with values <em>0</em> for a male subject and <em>1</em> for a female subject. </p>
+<table border="0">
+<tbody>
+<tr>
+<td></td>
+<td colspan="2"><strong>Original Gender Values</strong></td>
+</tr>
+<tr>
+<td><strong>New Dummy Variable</strong></td>
+<td>Male</td>
+<td>Female</td>
+</tr>
+<tr>
+<td>female</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p>The coefficient calculated for this, then, represents the <em>difference</em> in scores between subjects with a <em>zero</em> score and those with a score of one.  The same logic holds for variables with more than two levels.</p>
 <p>Looking at the relationship between class membership and examination performance in the <em>results</em> data, we ask what is the effect of member ship of class two or three against class one in this data on avxm?</p>
 <p>First, you will need to ensure that your variable can be understood by R as a <em>factor</em> and you can test this with <em>is.factor(variable)</em> and if necessary you can use <em>as.factor(variable)</em> to either create a new factor variable based on the existing one or to<em> coerce</em> the interpretation of the variable as a factor.</p>
 <p>The model is created with <em>lm()</em> and the categorical variable is introduced in the usual way, introduced by<em> </em><em>+</em> if there are multiple independent variables.</p>
@@ -136,4 +163,4 @@
 </nav>
 </div>
 </div>
-<script type="text/javascript" src="_style_js.js"></script></body></html>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

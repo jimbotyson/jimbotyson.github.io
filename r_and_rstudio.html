@@ -12,8 +12,7 @@
 <script type="text/javascript" src="exe_jquery.js"></script>
 <script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
 <script type="text/javascript" src="common.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
 <body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
 <div id="content">
 <p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
@@ -24,14 +23,22 @@
    <li class="current-page-parent"><a href="data_management_and_descriptive_statistics.html" class="current-page-parent daddy">Data management and descriptive statistics</a>
    <ul>
       <li id="active"><a href="r_and_rstudio.html" class="active no-ch">R and RStudio</a></li>
-      <li><a href="help.html" class="no-ch">Help</a></li>
+      <li><a href="help.html" class="daddy">Help</a>
+      <ul class="other-section">
+         <li><a href="pop_quiz.html" class="no-ch">Pop Quiz!</a></li>
+      </ul>
+      </li>
       <li><a href="the_interface.html" class="no-ch">The interface</a></li>
-      <li><a href="add_on_packages.html" class="no-ch">Add on packages</a></li>
+      <li><a href="add_on_packages.html" class="daddy">Add on packages</a>
+      <ul class="other-section">
+         <li><a href="finding_useful_packages.html" class="no-ch">Finding useful packages</a></li>
+      </ul>
+      </li>
       <li><a href="basic_command_line_statements.html" class="no-ch">Basic command line statements</a></li>
       <li><a href="importing_datasets.html" class="no-ch">Importing datasets</a></li>
       <li><a href="some_r_data_structures_and_data_selection.html" class="daddy">Some R data structures and data selection</a>
       <ul class="other-section">
-         <li><a href="first_task.html" class="no-ch">First task</a></li>
+         <li><a href="a_data_selection_challenge.html" class="no-ch">A data selection challenge</a></li>
       </ul>
       </li>
       <li><a href="basic_data_manipulation_routines_in_r.html" class="daddy">Basic data manipulation routines in R</a>
@@ -44,12 +51,12 @@
          </ul>
          </li>
          <li><a href="factors_levels_and_labels.html" class="no-ch">Factors, levels and labels</a></li>
-         <li><a href="second_task.html" class="no-ch">Second task</a></li>
+         <li><a href="consolidation_task.html" class="no-ch">Consolidation task</a></li>
       </ul>
       </li>
       <li><a href="summary_statistics.html" class="daddy">Summary statistics</a>
       <ul class="other-section">
-         <li><a href="third_task.html" class="no-ch">Third task</a></li>
+         <li><a href="task_describing_shape.html" class="no-ch">Task: describing shape</a></li>
       </ul>
       </li>
    </ul>
@@ -88,18 +95,29 @@
 <div id="main-wrapper">
 <section id="main">
 <header id="nodeDecoration"><h1 id="nodeTitle">R and RStudio</h1></header>
-<article class="iDevice_wrapper FreeTextIdevice" id="id2">
+<article class="iDevice_wrapper FreeTextIdevice" id="id73">
 <div class="iDevice emphasis0">
-<div id="ta2_85" class="block iDevice_content">
+<div id="ta73_85" class="block iDevice_content">
 <p>R is a programming language. It is the open-source version of the language S-Plus. R is designed to be good for statistical programming and graphics.</p>
-<p>For many computer systems, you can install an <em>interpreter</em> for R. This will allow you to send single line commands to R and R will respond. This is the R command line.</p>
+<p>For many computer systems, you can <a href="https://www.r-project.org/" target="_blank">install an <em>interpreter</em> for </a>R. This will allow you to send single line commands to R and R will respond. This is the R command line.</p>
 <p>Alternately you can create a text file of R code in a text editor (Windows notepad for example or vi). You can then run the complete program in your file and R will execute the commands in sequence and show you the final results.</p>
-<p><strong>RStudio</strong> is an <em>integrated environment</em> for developing R programs. It combines access to the command line interpreter with an editor to create code files, a file browser, a graphics browser to let you see what graphs you have produced and a data browser so that you can inspect data as it is created in your R session.</p>
-<p>The <strong>RStudio</strong> environment also allows you to integrate R and LaTeX or Markdown and produce documents that combine formatted text and the results from R analysis.</p>
+<p><a href="https://www.rstudio.com/" target="_blank"><strong>RStudio</strong></a> is an <em>integrated environment</em> for developing R programs. It combines access to the command line interpreter with an editor to create code files, a file browser, a graphics browser to let you see what graphs you have produced and a data browser so that you can inspect data as it is created in your R session.</p>
+<p>The <strong>RStudio</strong> environment also allows you to integrate R and <a href="https://www.tug.org/tutorials/tugindia/" target="_blank">LaTeX</a> or Markdown and produce documents that combine formatted text and the results from R analysis.</p>
 <p>Many people find <strong>RStudio</strong> a very productive way to use R and it is a very good tool to use when you are learning R.</p>
-<h3>Supplementary reading</h3>
+<p>Also remember that a good knowledge of R functions and commands is a good thing.  But a systematic approach to data organisation and analysis is more important: you can look up a function in the help at any time.</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper activityIdevice em_iDevice" id="id74">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Some reading</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta74_106_2" class="block iDevice_content">
 <p>If you are going to use R in your work beyond this course, then I recommend that you read <a target="_blank" href="http://reganmian.net/blog/2014/10/14/starting-data-analysiswrangling-with-r-things-i-wish-id-been-told/">this blog entry from a PhD student that outlines what he wished he'd known before he started</a>!</p>
-<p>Good knowledge of R functions and commands is a good thing.  But a systematic approach to data organisation and analysis is more important: you can look up a function in the help at any time.</p>
+<p></p>
+</div>
+</div>
 </div>
 </div>
 </article>
@@ -111,4 +129,4 @@
 </nav>
 </div>
 </div>
-<script type="text/javascript" src="_style_js.js"></script></body></html>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>
