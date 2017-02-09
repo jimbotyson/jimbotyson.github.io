@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="content.css" />
 <link rel="stylesheet" type="text/css" href="nav.css" />
 <meta http-equiv="content-type" content="text/html;  charset=utf-8" />
-<title>R and RStudio </title>
+<title>Importing datasets from plain text and Excel files </title>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
 <!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
@@ -22,7 +22,7 @@
    <li><a href="index.html" class="daddy main-node">R: a first course</a></li>
    <li class="current-page-parent"><a href="data_management_and_descriptive_statistics.html" class="current-page-parent daddy">Data management and descriptive statistics</a>
    <ul>
-      <li id="active"><a href="r_and_rstudio.html" class="active no-ch">R and RStudio</a></li>
+      <li><a href="r_and_rstudio.html" class="no-ch">R and RStudio</a></li>
       <li><a href="help.html" class="daddy">Help</a>
       <ul class="other-section">
          <li><a href="pop_quiz.html" class="no-ch">Pop Quiz!</a></li>
@@ -35,7 +35,7 @@
       </ul>
       </li>
       <li><a href="basic_command_line_statements.html" class="no-ch">Basic command line statements</a></li>
-      <li><a href="importing_datasets_from_plain_text_and_excel_files.html" class="no-ch">Importing datasets from plain text and Excel files</a></li>
+      <li id="active"><a href="importing_datasets_from_plain_text_and_excel_files.html" class="active no-ch">Importing datasets from plain text and Excel files</a></li>
       <li><a href="some_r_data_structures_and_data_selection.html" class="daddy">Some R data structures and data selection</a>
       <ul class="other-section">
          <li><a href="a_data_selection_challenge.html" class="no-ch">A data selection challenge</a></li>
@@ -89,35 +89,131 @@
 </nav>
 <div id='topPagination'>
 <nav class="pagination noprt">
-<a href="data_management_and_descriptive_statistics.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="help.html" class="next"><span>Next<span> &raquo;</span></span></a>
+<a href="basic_command_line_statements.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="some_r_data_structures_and_data_selection.html" class="next"><span>Next<span> &raquo;</span></span></a>
 </nav>
 </div>
 <div id="main-wrapper">
 <section id="main">
-<header id="nodeDecoration"><h1 id="nodeTitle">R and RStudio</h1></header>
-<article class="iDevice_wrapper FreeTextIdevice" id="id73">
+<header id="nodeDecoration"><h1 id="nodeTitle">Importing datasets from plain text and Excel files</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id8">
 <div class="iDevice emphasis0">
-<div id="ta73_85" class="block iDevice_content">
-<p>R is a programming language. It is the open-source version of the language S-Plus. R is designed to be good for statistical programming and graphics.</p>
-<p>For many computer systems, you can <a href="https://www.r-project.org/" target="_blank">install an <em>interpreter</em> for </a>R. This will allow you to send single line commands to R and R will respond. This is the R command line.</p>
-<p>Alternately you can create a text file of R code in a text editor (Windows notepad for example or vi). You can then run the complete program in your file and R will execute the commands in sequence and show you the final results.</p>
-<p><a href="https://www.rstudio.com/" target="_blank"><strong>RStudio</strong></a> is an <em>integrated environment</em> for developing R programs. It combines access to the command line interpreter with an editor to create code files, a file browser, a graphics browser to let you see what graphs you have produced and a data browser so that you can inspect data as it is created in your R session.</p>
-<p>The <strong>RStudio</strong> environment also allows you to integrate R and <a href="https://www.tug.org/tutorials/tugindia/" target="_blank">LaTeX</a> or Markdown and produce documents that combine formatted text and the results from R analysis.</p>
-<p>Many people find <strong>RStudio</strong> a very productive way to use R and it is a very good tool to use when you are learning R.</p>
-<p>Also remember that a good knowledge of R functions and commands is a good thing.  But a systematic approach to data organisation and analysis is more important: you can look up a function in the help at any time.</p>
-</div>
-</div>
-</article>
-<article class="iDevice_wrapper activityIdevice em_iDevice" id="id74">
-<div class="iDevice emphasis1" >
-<header class="iDevice_header"><h1 class="iDeviceTitle">Some reading</h1></header>
-<div class="iDevice_inner">
-<div class="iDevice_content_wrapper">
-<div id="ta74_106_2" class="block iDevice_content">
-<p>If you are going to use R in your work beyond this course, then I recommend that you read <a target="_blank" href="http://reganmian.net/blog/2014/10/14/starting-data-analysiswrangling-with-r-things-i-wish-id-been-told/">this blog entry from a PhD student that outlines what he wished he'd known before he started</a>!</p>
+<div id="ta8_85" class="block iDevice_content">
+<h1 id="import-datasets-in-to-the-rstudio-workspace-from-plain-text-and-excel-file-formats"></h1>
+<p>You can import data into R from a file containing plain text. The file should contain data that can be understood as cases and variables. Most commonly, the file will contain cases in rows and variables in columns. The columns should be separated by some character - often a tab or a comma.</p>
+<p>Here is an example, just the first few lines of a file where the columns are separated by commas:</p>
+<table border="1">
+<tbody>
+<tr>
+<td>patient,gender,surname,age,postcode,income,smoker,hbefore,hafter<br />735745,1,ROBBINS,32,KT13,46000,N,94.58,88.79<br />1009009,2,MCGREGOR,33,KY1,58000,N,106.12,78.25<br />845260,2,KUMAR,38,FY7,47000,Y,88.11,102.45<br />780768,1,ALLINSON-HENRY,51,KA11,55000,N,83.62,63.82<br />1176135,2,OLDER,44,DE23,28000,N,72.31,77.50<br />1275041,1,BERRY,41,S80,28000,Y,84.37,68.21<br />845772,1,SMITH,56,BT43,61000,N,76.95,81.47</td>
+</tr>
+</tbody>
+</table>
 <p></p>
-</div>
-</div>
+<p></p>
+<p>It isn’t very easy to understand set out like this, so let’s line up the columns visually:</p>
+<table>
+<tbody>
+<tr>
+<td>patient</td>
+<td>gender</td>
+<td>surname</td>
+<td>age</td>
+<td>postcode</td>
+<td>income</td>
+<td>smoker</td>
+<td>hbefore</td>
+<td>hafter</td>
+</tr>
+<tr>
+<td>735745</td>
+<td>1</td>
+<td>ROBBINS</td>
+<td>32</td>
+<td>KT13</td>
+<td>46000</td>
+<td>N</td>
+<td>94.58</td>
+<td>88.79</td>
+</tr>
+<tr>
+<td>1009009</td>
+<td>2</td>
+<td>MCGREGOR</td>
+<td>33</td>
+<td>KY1</td>
+<td>58000</td>
+<td>N</td>
+<td>106.12</td>
+<td>78.25</td>
+</tr>
+<tr>
+<td>845260</td>
+<td>2</td>
+<td>KUMAR</td>
+<td>38</td>
+<td>FY7</td>
+<td>47000</td>
+<td>Y</td>
+<td>88.11</td>
+<td>102.45</td>
+</tr>
+<tr>
+<td>780768</td>
+<td>1</td>
+<td>ALLINSON-HENRY</td>
+<td>51</td>
+<td>KA11</td>
+<td>55000</td>
+<td>N</td>
+<td>83.62</td>
+<td>63.82</td>
+</tr>
+<tr>
+<td>1176135</td>
+<td>2</td>
+<td>OLDER</td>
+<td>44</td>
+<td>DE23</td>
+<td>28000</td>
+<td>N</td>
+<td>72.31</td>
+<td>77.50</td>
+</tr>
+<tr>
+<td>1275041</td>
+<td>1</td>
+<td>BERRY</td>
+<td>41</td>
+<td>S80</td>
+<td>28000</td>
+<td>Y</td>
+<td>84.37</td>
+<td>68.21</td>
+</tr>
+<tr>
+<td>845772</td>
+<td>1</td>
+<td>SMITH</td>
+<td>56</td>
+<td>BT43</td>
+<td>61000</td>
+<td>N</td>
+<td>76.95</td>
+<td>81.47</td>
+</tr>
+</tbody>
+</table>
+<p>We can see that this is a file with nine columns - nine variables if you will. Some of the variables are numeric and some are character data. Because this is mixed data - numeric and text - we will read it into a R list. If the file is named <em>excsv.txt</em> here is the command</p>
+<p><code data-origin="&lt;pre&gt;&lt;code&gt;&amp;gt;dat&amp;lt;-read.csv(&quot;excsv.txt&quot;,header=TRUE, sep=&quot;,&quot;)
+&lt;/code&gt;&lt;/pre&gt;">&gt;dat&lt;-read.csv("excsv.txt",header=TRUE, sep=",") </code></p>
+<p>We have used the function <em>read.csv</em> because of the format of the data: it has values separated by commas (<em>sep=”,”</em>). And we have told R that the first line contains headers (<em>header=TRUE</em>).</p>
+<p>As we said, this object has the <em>type</em> <em>list</em> which is the array like structure for heterogeneous data. R will also treat this as a dataframe: a two dimensional array (a table like object) with variables in columns and observations or cases in rows.</p>
+<p>You can read <em>tab</em> separated data with the <em>read.table()</em> command.</p>
+<p>You can also read spreadsheet data.</p>
+<p>If our example data were in an excel spreadsheet instead of a text file, we could read it if the package <em>xlsx</em> were installed in R. We will look at installing packages later, but the correct command would be:</p>
+<p><code data-origin="&lt;pre&gt;&lt;code&gt;&amp;gt;dat&amp;lt;-read.xlsx(&quot;datafile.xlsx&quot;,header=TRUE)
+&lt;/code&gt;&lt;/pre&gt;">&gt;dat&lt;-read.xlsx("datafile.xlsx",header=TRUE) </code></p>
+<p>You see that it’s very similar in form.</p>
 </div>
 </div>
 </article>
@@ -125,7 +221,7 @@
 </div>
 <div id='bottomPagination'>
 <nav class="pagination noprt">
-<a href="data_management_and_descriptive_statistics.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="help.html" class="next"><span>Next<span> &raquo;</span></span></a>
+<a href="basic_command_line_statements.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="some_r_data_structures_and_data_selection.html" class="next"><span>Next<span> &raquo;</span></span></a>
 </nav>
 </div>
 </div>
