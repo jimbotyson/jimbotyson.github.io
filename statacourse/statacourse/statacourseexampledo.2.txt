@@ -1,0 +1,54 @@
+#download the latest, most up to date data set
+#for this example I'm just pointing at some data on my website
+# the *clear* at the end is important
+
+insheet using "http://www.ucl.ac.uk/~ccaajim/datasets/ss13hca.csv", clear
+
+#drop the variables you don't need
+#or of course keep the variables you need if that's easier...
+
+keep ft serialno wgtp fhincp fincp flaptopp ffibreopp
+
+#check that all remaining variable values are in range
+#I'm going to illustrate this with a loop - it's a learning opportunity!
+#first generate a flag (rangeflag) variable that will indicate if any values are
+#suspicious: all zeroes to start with
+
+#we are going to use the very useful *capture* will allow us to ignore
+#an error caused in case rangeflag doesn't exist and so drop fails
+
+capture drop rangeflag
+
+#having dropped rangeflag if necessary, we recreate it
+
+gen rangeflag=0
+
+#now the loop which applies the inrange function
+#(with a ! for *not*) to each of fincp fhincp
+
+foreach var in fincp fhincp {
+	replace rangeflag= 1 if !inrange(`var',0,1000000)
+}
+
+#produce a report on any out of range values
+
+list serialno fhincp fincp if rangeflag == 1
+
+#drop cases with out of range data
+#of course, this will not always be the right thing to do
+
+drop if rangeflag==1
+
+#create derived variables
+
+gen avinc = (fincp + fhincp)/2
+
+gen mobtech = 1 if(flaptopp == 1 & ffibreopp ==1)
+
+#rankings - creating some ordinal values from existing continuous variables
+
+#how would you do this?
+
+#create some basic plots and summaries
+
+#what would be required for these?

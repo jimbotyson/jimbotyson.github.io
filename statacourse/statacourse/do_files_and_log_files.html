@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Do Files and Log Files | Practical Stata </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jim Tyson" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<header id="header" ><div id="headerContent">Practical Stata</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Practical Stata Home</a></li>
+   <li><a href="getting_started.html" class="no-ch">Getting Started</a></li>
+   <li><a href="opening_a_stata_dataset.html" class="no-ch">Opening a Stata Dataset</a></li>
+   <li><a href="import_data.html" class="no-ch">Import Data</a></li>
+   <li><a href="stata_syntax.html" class="no-ch">Stata Syntax</a></li>
+   <li id="active"><a href="do_files_and_log_files.html" class="active no-ch">Do Files and Log Files</a></li>
+   <li><a href="generating_variables.html" class="no-ch">Generating Variables</a></li>
+   <li><a href="labelling_variables_and_values.html" class="no-ch">Labelling variables and values</a></li>
+   <li><a href="data_preparation.html" class="no-ch">Data Preparation</a></li>
+   <li><a href="summary_statistics_tabstat.html" class="no-ch">Summary statistics: tabstat</a></li>
+   <li><a href="summary_statistics_summarize.html" class="no-ch">Summary statistics: summarize</a></li>
+   <li><a href="the_class_room_session.html" class="no-ch">The Class Room Session</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="stata_syntax.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="generating_variables.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Do Files and Log Files</h1></header>
+<article class="iDevice_wrapper objectivesIdevice em_iDevice" id="id81">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Learning in this topic</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta81_81_2" class="block iDevice_content">
+<p>The objective of this topic is to learn about two non-data filetypes</p>
+<ul>
+<li>do files</li>
+<li>log files</li>
+</ul>
+<p>You will understand how to create each and what their proper uses are and you will be able to summarize the advantages of using a do file over working interactively at the command line.</p>
+<p>The essential activities in this topic are watching the video and trying out the <em>do</em> file example code below.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id17">
+<div class="iDevice emphasis0">
+<div id="ta17_85" class="block iDevice_content">
+<h2><em>The do file</em></h2>
+<p><em>Do</em> files provide a simple way to batch together Stata commands and to automate Stata procedures.  A <em>do</em> file is a simple text file that contains Stata commands, usually one to a line, and possibly simple programming constructs such as loops (to repeat actions) and conditionals (to make decisions or selections).</p>
+<p>It is very convenient to work on the Stata command line, but there are also advantages to creating <em>do</em> files, especially for more complicated procedures.  Using a <em>do</em> file</p>
+<ul>
+<li>helps you create work is <a href="https://en.wikipedia.org/wiki/Reproducibility#Reproducible_research">reproducible</a></li>
+<li>makes it much  easier to check and debug your procedures  than by scrolling through your command history</li>
+<li>if you create a <em>do</em> file that does the data preparation and the analysis, you are sure that you are always starting with the correct data</li>
+</ul>
+<p>Please watch  <a target="_blank" href="http://tinyurl.com/statabook4">this video</a> to learn about Stata scripting with <em>Do Files</em>.</p>
+<p><a target="_blank" href="http://jearl.faculty.arizona.edu/sites/jearl.faculty.arizona.edu/files/Jan27_2014_material_wiki.pdf">This pdf </a>gives some good basic advice about creating and using <em>do</em> files.</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice" id="id42">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Stata Manual Page: creating do files</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta42_82" class="block iDevice_content">
+<p>These manual pages describe the uses of <em>do files</em> and of the <em>do file editor</em>.</p>
+</div>
+<ul class='exeFileList'><li><a href='gsw13.pdf' target='_blank'>Stata Manual Page<span> (New Window)</span></a></li>
+<li><a href='u16.pdf' target='_blank'>Stata Manual Chapter<span> (New Window)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id82">
+<div class="iDevice emphasis0">
+<div id="ta82_85" class="block iDevice_content">
+<h2><em>The log file</em></h2>
+<p>A log file is an automatically created record of the input and output of a stata session.  It comtains the commands you have issued to Stata and Stata's responses.  There are two formats for log <em>smcl</em> (pronounced <em>smickle</em>) and plain text.  SMCL is a rich mark up format that can be used by sophisticated users to produce nicely formatted output.  In general, a plain text log file is adequate.</p>
+<p>You start a log file at any time with the command</p>
+<p style="margin-left: 30px;"><code>log using "filename_for_my_log", text<br /></code></p>
+<p><code>and you close and save with the command</code></p>
+<pre style="margin-left: 30px;">log close</pre>
+<p>which will also save the file.</p>
+<p>A log file is a useful record of what you do in a session.  I strongly recommend that logfiles should have names including the project name and the date of the Stata session.  If you regularly use a standard format for log file names you will make your life much easier.</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionIdevice em_iDevice" id="id83">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Try out a do file</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta83_92" class="block iDevice_content">
+<p>Create a new do file.  You may wish to refer to the Stata help document linked below.</p>
+<p>Enter the following lines of code in the do file editor</p>
+<pre><span><img src="eXe_LaTeX_math_0.gif" width="448" height="154" /></span></pre>
+<p><br />Run the do file.</p>
+<p>Can you explain what the <strong>do file</strong> does?</p>
+</div>
+<form name="feedback-form-83_93" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedback83_93text = "Feedback";</script><input type="button" name="toggle-feedback-83_93" value="Feedback" class="feedbackbutton" onclick="$exe.toggleFeedback(this,false);return false" /></p>
+</div>
+<section id="feedback-83_93" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Feedback</h1>
+<p>This do file creates a small data set in memory with four cases and two variables.  The first variable is an integer labelled <em>age</em> and the second is a string of characters with maximum length 25 labelled <i>name</i>.</p></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="stata_syntax.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="generating_variables.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

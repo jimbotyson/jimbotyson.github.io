@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Summary statistics: tabstat | Practical Stata </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jim Tyson" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<header id="header" ><div id="headerContent">Practical Stata</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Practical Stata Home</a></li>
+   <li><a href="getting_started.html" class="no-ch">Getting Started</a></li>
+   <li><a href="opening_a_stata_dataset.html" class="no-ch">Opening a Stata Dataset</a></li>
+   <li><a href="import_data.html" class="no-ch">Import Data</a></li>
+   <li><a href="stata_syntax.html" class="no-ch">Stata Syntax</a></li>
+   <li><a href="do_files_and_log_files.html" class="no-ch">Do Files and Log Files</a></li>
+   <li><a href="generating_variables.html" class="no-ch">Generating Variables</a></li>
+   <li><a href="labelling_variables_and_values.html" class="no-ch">Labelling variables and values</a></li>
+   <li><a href="data_preparation.html" class="no-ch">Data Preparation</a></li>
+   <li id="active"><a href="summary_statistics_tabstat.html" class="active no-ch">Summary statistics: tabstat</a></li>
+   <li><a href="summary_statistics_summarize.html" class="no-ch">Summary statistics: summarize</a></li>
+   <li><a href="the_class_room_session.html" class="no-ch">The Class Room Session</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="data_preparation.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="summary_statistics_summarize.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Summary statistics: tabstat</h1></header>
+<article class="iDevice_wrapper objectivesIdevice em_iDevice" id="id87">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Learning in this topic</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta87_103_2" class="block iDevice_content">
+<p>The objective in this topic is to explain the use of the Stata command <em>tabstat</em> for producing summary statistics.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id22">
+<div class="iDevice emphasis0">
+<div id="ta22_85" class="block iDevice_content">
+<p>Please watch <a target="_blank" href="http://tinyurl.com/statabook8">this video</a> which explains the use of the <em>tabstat</em> command.</p>
+<p>The tabstat command takes the general form</p>
+<p><code>tabstat <span style="text-decoration: underline;">variable</span>, statistics(...) by(factor)</code></p>
+<p>With <em><span class="code">tabstat</span></em> the following <em>statistics</em> are available</p>
+<table border="1">
+<tbody>
+<tr>
+<td>
+<p>mean</p>
+</td>
+<td>
+<p>mean</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>count</p>
+</td>
+<td>
+<p>count of nonmissing observations</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>n</p>
+</td>
+<td>
+<p>same as count</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sum</p>
+</td>
+<td>
+<p>sum</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>max</p>
+</td>
+<td>
+<p>maximum</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>min</p>
+</td>
+<td>
+<p>minimum</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>range</p>
+</td>
+<td>
+<p>range = max - min</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>sd</p>
+</td>
+<td>
+<p>standard deviation</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>variance</p>
+</td>
+<td>
+<p>variance</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>cv</p>
+</td>
+<td>
+<p>coefficient of variation (sd/mean)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>semean</p>
+</td>
+<td>
+<p>standard error of mean (sd/sqrt(n))</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>skewness</p>
+</td>
+<td>
+<p>skewness</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>kurtosis</p>
+</td>
+<td>
+<p>kurtosis</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p1</p>
+</td>
+<td>
+<p>1st percentile</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p5</p>
+</td>
+<td>
+<p>5th percentile</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p10</p>
+</td>
+<td>
+<p>10th percentile</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p25</p>
+</td>
+<td>
+<p>25th percentile</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>median</p>
+</td>
+<td>
+<p>median (same as p50)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p50</p>
+</td>
+<td>
+<p>50th percentile (same as median)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p75</p>
+</td>
+<td>
+<p>75th percentile</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p90</p>
+</td>
+<td>
+<p>90th percentile</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p95</p>
+</td>
+<td>
+<p>95th percentile</p>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<p></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>p99</p>
+</td>
+<td>
+<p>99th percentile</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>iqr</p>
+</td>
+<td>
+<p>interquartile range = p75 - p25</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>q</p>
+</td>
+<td>
+<p>equivalent to specifying p25 p50 p75</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionIdevice em_iDevice" id="id70">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Tabstat (and understanding code)</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta70_92" class="block iDevice_content">
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta69_43_2" class="block iDevice_content">
+<p>Create a file with the following code lines.</p>
+<p><code>import excel "http://www.ucl.ac.uk/~ccaajim/results.xls", clear first case(lower)</code></p>
+<p><code>gen avxm=(maths+english+history)/3 </code></p>
+<p><code>local conts maths english history avxm </code></p>
+<p><code>format `conts' %9.2f </code></p>
+<p><code>tabstat `conts', statistics(mean, var, sd) by(sex)</code></p>
+<p>Run the code and then comment each line explaining what it does.  Use the Stata help or any other resource to help you explain the code.</p>
+</div>
+</div>
+</div>
+</div>
+<form name="feedback-form-70_93" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedback70_93text = "Show Feedback";</script><input type="button" name="toggle-feedback-70_93" value="Show Feedback" class="feedbackbutton" onclick="$exe.toggleFeedback(this,true);return false" /></p>
+</div>
+<section id="feedback-70_93" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Feedback</h1>
+<p>*import data from an excel spreadhsheet, clear data from memory first, and put variable names from the first row in lower case</p>
+<p><code>import excel "http://www.ucl.ac.uk/~ccaajim/results.xls", clear first case(lower)</code></p>
+<p>*create a new variable avmx which is the average of the three exam scores</p>
+<p><code>gen avxm=(maths+english+history)/3 </code></p>
+<p>*create a local macro (name) to refer to all the continuous variables conveniently</p>
+<p><code>local conts maths english history avxm </code></p>
+<p>*specify that the continuous variable output should be displayed to two decimal places</p>
+<p><code>format `conts' %9.2f </code></p>
+<p>*show a table of the mean, variance and standard deviation for all the continuous variables split by sex</p>
+<p><code>tabstat `conts', statistics(mean, var, sd) by(sex)</code></p></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="data_preparation.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="summary_statistics_summarize.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

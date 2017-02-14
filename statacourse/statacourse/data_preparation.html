@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Data Preparation | Practical Stata </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jim Tyson" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<header id="header" ><div id="headerContent">Practical Stata</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Practical Stata Home</a></li>
+   <li><a href="getting_started.html" class="no-ch">Getting Started</a></li>
+   <li><a href="opening_a_stata_dataset.html" class="no-ch">Opening a Stata Dataset</a></li>
+   <li><a href="import_data.html" class="no-ch">Import Data</a></li>
+   <li><a href="stata_syntax.html" class="no-ch">Stata Syntax</a></li>
+   <li><a href="do_files_and_log_files.html" class="no-ch">Do Files and Log Files</a></li>
+   <li><a href="generating_variables.html" class="no-ch">Generating Variables</a></li>
+   <li><a href="labelling_variables_and_values.html" class="no-ch">Labelling variables and values</a></li>
+   <li id="active"><a href="data_preparation.html" class="active no-ch">Data Preparation</a></li>
+   <li><a href="summary_statistics_tabstat.html" class="no-ch">Summary statistics: tabstat</a></li>
+   <li><a href="summary_statistics_summarize.html" class="no-ch">Summary statistics: summarize</a></li>
+   <li><a href="the_class_room_session.html" class="no-ch">The Class Room Session</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="labelling_variables_and_values.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="summary_statistics_tabstat.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Data Preparation</h1></header>
+<article class="iDevice_wrapper objectivesIdevice em_iDevice" id="id86">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Learning in this topic</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta86_102_2" class="block iDevice_content">
+<p>The objective of this topic is to explain some basic data preparation tasks and  the advantages of scripting data preparation and analysis topics in Stata and then to run an example script to see its operation and output.</p>
+<p>The essential activities in this topic are to watch the video and to examine and if possible run the example script.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id20">
+<div class="iDevice emphasis0">
+<div id="ta20_85" class="block iDevice_content">
+<h1>Be prepared!</h1>
+<p>Before analysing data you will want to be sure that so far as possible the raw data is free from errors and not corrupted.  The process of preparing data for anaysis is often called <em>data cleaning</em>.  The material in this topic introduces some of the basic things you can do in Stata to clean data.</p>
+<p>Please watch <a target="_blank" href="http://tinyurl.com/statabook6">this video</a>.</p>
+<p>You may find the <a target="_blank" href="https://en.wikipedia.org/wiki/Data_cleansing">Wikipedia article on data cleaning</a> useful.</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id60">
+<div class="iDevice emphasis0">
+<div id="ta60_85" class="block iDevice_content">
+<h2>Data preparation and do files</h2>
+<p>Let's imagine a fairly typical data analysis task.  Imagine that your work involves analysing the most recent British Labour Force Survey data from ONS.  The task goes like this:</p>
+<ol>
+<li>download the latest, most up to date data set</li>
+<li>drop the variables you don't need</li>
+<li>check that all remaining variable values are in range and produce a report on any out of range values or drop cases with out of range data (this is of course a theoretical problem that you have to work out...)</li>
+<li>create derived variables<ol>
+<li>aggregates - maybe averages of existing scores</li>
+<li>rankings - creating some ordinal values from existing continuous variables</li>
+<li>create some basic plots and summaries</li>
+</ol></li>
+</ol>
+<p>It is of course possible that you could decide to download the data just once at the start of your study, save it locally and work on that version from then on, but this isn't always the best approach.</p>
+<p>If you do want to always have the most up to date version of the data, then you don't want to do the tasks above manually each time.  So it makes sense to create a do file.  To create that file I suggest making an outline of the tasks like the one above and then copying it to your do file as comment.  There is a partial example attached below that you can look at.  Not all the code is fully explained so you will need to do some research if you want to understand it before the classroom session.</p>
+<p></p>
+<p></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice" id="id62">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">File Attachments</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta62_82" class="block iDevice_content">
+<p>This is the text of a partial do file for a data preparation task.  If you wanted to use this in Stata you would rename it to have a <em>.do</em> extension.</p>
+</div>
+<ul class='exeFileList'><li><a href='statacourseexampledo.2.txt' target='_blank'>statacourseexampledo.txt<span> (New Window)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionIdevice em_iDevice" id="id68">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Dealing with a data type issue</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta68_92" class="block iDevice_content">
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta67_45_2" class="block iDevice_content">
+<p>Sometimes when you import data into Stata, you will find that the <em>data type</em> is not what you expect.  The data values you observe may look like numbers, but the data may in fact have been imported as a <em>string</em>.</p>
+<p>Since many operations will be senstive to the distinction if any variable<em> </em><strong>is</strong> incorrectly marked as a string you will need to correct that.</p>
+<p>Using the stata help and any other resources you have, find the stata command that would convert a <em>string</em> variable to a <em>numeric</em> variable.</p>
+<p>What do you think might be <em>the most important advice</em> you could give someone on using the command?</p>
+</div>
+</div>
+</div>
+</div>
+<form name="feedback-form-68_93" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedback68_93text = "Show Feedback";</script><input type="button" name="toggle-feedback-68_93" value="Show Feedback" class="feedbackbutton" onclick="$exe.toggleFeedback(this,true);return false" /></p>
+</div>
+<section id="feedback-68_93" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Feedback</h1>
+<p>The command that will convert a variable from <em>string</em> type to <em>numeric</em> type is <strong>destring</strong>.</p>
+<p>It is useful when data appears to be numeric - ie the characters are all in the range 0-9 - but the type is recognised by stata as <em>str</em>.  If you look at the <a target="_blank" href="http://www.stata.com/help.cgi?destring">manual page</a> you will see that it has options to replace existing values or generate new variables.</p>
+<p>The best advice to give is that before using destring you should copy the existing variable (or indeed the data set) or that you should use destring with the <em>generate</em> option.  Be aware that if you have do files working on the variable, then using destring may cause them to fail or create anomalous results.</p></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="labelling_variables_and_values.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="summary_statistics_tabstat.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

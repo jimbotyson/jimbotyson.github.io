@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Import Data | Practical Stata </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jim Tyson" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<header id="header" ><div id="headerContent">Practical Stata</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Practical Stata Home</a></li>
+   <li><a href="getting_started.html" class="no-ch">Getting Started</a></li>
+   <li><a href="opening_a_stata_dataset.html" class="no-ch">Opening a Stata Dataset</a></li>
+   <li id="active"><a href="import_data.html" class="active no-ch">Import Data</a></li>
+   <li><a href="stata_syntax.html" class="no-ch">Stata Syntax</a></li>
+   <li><a href="do_files_and_log_files.html" class="no-ch">Do Files and Log Files</a></li>
+   <li><a href="generating_variables.html" class="no-ch">Generating Variables</a></li>
+   <li><a href="labelling_variables_and_values.html" class="no-ch">Labelling variables and values</a></li>
+   <li><a href="data_preparation.html" class="no-ch">Data Preparation</a></li>
+   <li><a href="summary_statistics_tabstat.html" class="no-ch">Summary statistics: tabstat</a></li>
+   <li><a href="summary_statistics_summarize.html" class="no-ch">Summary statistics: summarize</a></li>
+   <li><a href="the_class_room_session.html" class="no-ch">The Class Room Session</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="opening_a_stata_dataset.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="stata_syntax.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Import Data</h1></header>
+<article class="iDevice_wrapper objectivesIdevice em_iDevice" id="id78">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Learning in this topic</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta78_78_2" class="block iDevice_content">
+<p>The objective of this topic is to learn to import datasets created in applications other than stata, such as spreadsheets, whether focally or from a remote source.</p>
+<p>Loading data from remote sources is a useful technique and can be part of a strategy to <strong>treat data as read only</strong><em>.</em></p>
+<p>The essential activity in this topic is watching the video material and then completing the activity to download a data set from a remote source.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id54">
+<div class="iDevice emphasis0">
+<div id="ta54_85" class="block iDevice_content">
+<p>Please watch <a target="_blank" href="http://tinyurl.com/statabookb2">this video</a> which explains how you can import data from an Excel spreadsheet.</p>
+<p>There are two Stata commands for importing data that you should make yourself familiar with: <em>import excel</em> and <em>import delimited</em>.</p>
+<p>Here, they get very brief descriptions but they are described fully in the Stata help and documentation.</p>
+<h2>Import Excel</h2>
+<p>This command reads data from an excel spreadsheet.  The general form of the command is</p>
+<p><code>import excel using filename.xlsx, sheet(sheetname) first clear<code></code></code></p>
+<p>The option <em>sheet</em> allows you to specify a particular worksheet in the Excel file, otherwise the first sheet in the workbook is imported.  The option <em>first</em> treats the first row of the sheet as variable names and <em>clear</em> removes any data currently in memory.</p>
+<h2>Import Delimited</h2>
+<p>This command reads data from plain text files with one case per line and variables separated by some specified delimiter (such as a comma or a tab).  The general form of the command is</p>
+<p><code>import delimited using filename.txt, delimiters(",") varnames(1) clear</code></p>
+<p>The option <em>delimiters</em> tells Stata what character separates variables.  The option <em>varnames</em> tells Stata which row number the variable names are in and <em>clear</em> removes any data currently in memory.</p>
+<h2>Importing data from the net</h2>
+<p>Both versions of the import command can be used to import data from a url (a web address).  For example the command</p>
+<p><code>import excel "http://www.ucl.ac.uk/~ccaajim/results.xls", first clear</code></p>
+<p>Will import an excel data set a UCL personal website. You can try out this command.</p>
+<h2>Why <em>clear</em>?</h2>
+<p>Stata can only have one set of variables - that is one data file - in memory at a time.  Therefore, when importing data we use the option <em>clear</em> at the end of the command to make sure that any data currently in memory is removed before the import.</p>
+<h2>Saving data</h2>
+<p>The command to save the data currently in memory is <em>save</em> <span style="text-decoration: underline;">filename</span>.  This command saves in Stata format.</p>
+<p>If the dataset already exists with that filename then you will need to add the <em>replace</em> option so the command becomes</p>
+<p><code>save filename, replace</code></p>
+<p>In the data analysis process we should always try to treat data as read only - this means that in each analysis session we download an original data set and perform any data manipulation and modification required in memory then process and analyse the data.  We try not to create a new file containing modified data - after all it is unnecessary.</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper activityIdevice em_iDevice" id="id55">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Activity</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta55_52_2" class="block iDevice_content">
+<p>Below we have attached a data file in Excel format.</p>
+<p>The file is named MedicalXtrial.xlsx.</p>
+<p>Import this file into Stata.  The first row contains headers.  There are six variables: <em></em></p>
+<table border="1" cellspacing="0"><colgroup span="9" width="50"></colgroup>
+<tbody border="1">
+<tr>
+<td align="left" height="13">patient</td>
+<td align="left">gender</td>
+<td align="left">surname</td>
+<td align="left">age</td>
+<td align="left">postcode</td>
+<td align="left">income</td>
+<td align="left">smoker</td>
+<td align="left">hbefore</td>
+<td align="left">hafter</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p>Once you have imported the data</p>
+<ul>
+<li>examine the data using the <a target="_blank" href="http://www.stata.com/manuals13/gsw6.pdf"><em>data browser</em></a> (check the last section of this manual page).</li>
+<li>check the properties of the variables with the properties window</li>
+</ul>
+<p>Here is what each of these variables measures or records</p>
+<table style="width: 812px; height: 142px; border-color: #000000; border-width: 1px; border-style: solid;" border="1" cellspacing="0"><colgroup span="9" width="50"></colgroup>
+<tbody>
+<tr>
+<td align="left" height="13">patient</td>
+<td align="left">gender</td>
+<td align="left">surname</td>
+<td align="left">age</td>
+<td align="left">postcode</td>
+<td align="left">income</td>
+<td align="left">smoker</td>
+<td style="width: 5px;">hbefore</td>
+<td style="width: 5px;">hafter</td>
+</tr>
+<tr valign="top">
+<td align="left" height="13">Anonymised ID</td>
+<td align="left">M or F</td>
+<td align="left">Patient's Surname</td>
+<td align="left">Age in years</td>
+<td align="left">Patient's home postcode</td>
+<td align="left">Income in pounds sterling</td>
+<td align="left">Y or N</td>
+<td style="width: 50px;">Plasma concentration in pg/ml of a specific hormone before treatment</td>
+<td style="width: 50px;">Plasma concentration in pg/ml of a specific hormone after treatment</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice" id="id59">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">File Attachments</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta59_82" class="block iDevice_content">
+<p>This file contains partial data from a drug development trail.  All data has been scrambled to prevent any identification of individuals.</p>
+<p>You should download this file to your local drive and then import the data.</p>
+</div>
+<ul class='exeFileList'><li><a href='medicaltrialX.xlsx' target='_blank'>medicaltrialX.xlsx<span> (New Window)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="opening_a_stata_dataset.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="stata_syntax.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

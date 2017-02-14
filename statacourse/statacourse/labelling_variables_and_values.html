@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Labelling variables and values | Practical Stata </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jim Tyson" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<header id="header" ><div id="headerContent">Practical Stata</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Practical Stata Home</a></li>
+   <li><a href="getting_started.html" class="no-ch">Getting Started</a></li>
+   <li><a href="opening_a_stata_dataset.html" class="no-ch">Opening a Stata Dataset</a></li>
+   <li><a href="import_data.html" class="no-ch">Import Data</a></li>
+   <li><a href="stata_syntax.html" class="no-ch">Stata Syntax</a></li>
+   <li><a href="do_files_and_log_files.html" class="no-ch">Do Files and Log Files</a></li>
+   <li><a href="generating_variables.html" class="no-ch">Generating Variables</a></li>
+   <li id="active"><a href="labelling_variables_and_values.html" class="active no-ch">Labelling variables and values</a></li>
+   <li><a href="data_preparation.html" class="no-ch">Data Preparation</a></li>
+   <li><a href="summary_statistics_tabstat.html" class="no-ch">Summary statistics: tabstat</a></li>
+   <li><a href="summary_statistics_summarize.html" class="no-ch">Summary statistics: summarize</a></li>
+   <li><a href="the_class_room_session.html" class="no-ch">The Class Room Session</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="generating_variables.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="data_preparation.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Labelling variables and values</h1></header>
+<article class="iDevice_wrapper objectivesIdevice em_iDevice" id="id85">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Learning in this topic</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta85_101_2" class="block iDevice_content">
+<p>The essential activity in this topic is watching the video linked below.</p>
+<p>The objectives of this topic are to explain how both variables and values can be <em>labelled</em>.  A variable in a dataset may have a name that isn't very human friendly and while we would not normally want to change the name (it may for example be the standard for a well known data set or family of data sets) nonetheless it is helpful if we can use a friendly name in output such as tables and graphs.  A value for some variable may also be labelled.  For example, we may have a variable that <em>ranks</em> cases based on the intervals into which the scores fall.  We might wish to label these intervales, perhaps <em>low</em>, <em>mid</em> and <em>high</em>.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id73">
+<div class="iDevice emphasis0">
+<div id="ta73_85" class="block iDevice_content">
+<h2>Labels</h2>
+<p>Please watch <a target="_blank" href="https://youtu.be/KL3NRDilIOM">this video</a>.</p>
+<p>You can label a variable or its values (if they are <a href="https://en.wikipedia.org/wiki/Continuous_and_discrete_variables" target="_blank">discrete</a>).</p>
+<p>If for example you have questionnaire data, you may have variables named</p>
+<p><strong>q1</strong>, <strong>q2</strong>,<strong>...</strong>,<strong>q100</strong></p>
+<p><strong></strong>This is convenient in some respects but it is obviously difficult to remember the actual content of each of these.  It makes sense to <em>label</em> the variables with the actual wording of the questions.</p>
+<p>Similarly it is useful to have human friendly labels for the discrete levels of categorical variables so that if a variable <i>control</i> had values <em>0</em> and <em>1</em> we could label them <em>treatment</em> and <em>control</em>.<em><br /></em></p>
+<h2>Labelling a variable</h2>
+<p>You can label a variable with the command</p>
+<p><code>label variable "I chose this label"</code></p>
+<h2>Define a label set for values</h2>
+<p>A <span style="text-decoration: underline;">factor</span> variable is a categorical variable (nominal or ordinal).  As we saw when the <em>bysort </em>prefix command was introduced, factors can be used to group cases of data.  For example, the factor <em>sex</em> may divide your data into a number of subsets.</p>
+<p>Often, factors are encoded as numbers, 1/2 for <em>male</em> or <em>female</em> or 0/1 for <em>yes</em> or <em>no</em>.  Often it is convenient to have a human friendly label for these factor <em>levels</em>.  We create labels with</p>
+<p><code>label define labelsetname value label...value label</code></p>
+<p>For example</p>
+<p><code>label define classes 1 "First Class" 2 "Second Class" 3 "Third Class"</code></p>
+<p>This <em>creates</em> a new set of labels called <em>classes</em> such that a case with value 1 will be labelled <em>First Class</em>, 2 <em>Second Class</em> and 3 <em>Third Class</em>.  This set of labels can now be applied to any factor variable - nominal or ordinal - with three levels and numeric values 1,2 and 3.</p>
+<h2>Apply a label set to variable values</h2>
+<p>The label set is <em>applied</em> to the values of a factor with the following command</p>
+<p><code>label values variable labelsetname</code></p>
+<p>For example</p>
+<p><code>label values class classes</code></p>
+<p></p>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="generating_variables.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="data_preparation.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

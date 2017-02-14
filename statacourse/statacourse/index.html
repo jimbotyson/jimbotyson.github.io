@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Practical Stata </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jim Tyson" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<meta name="description" content="<h5><br></h5>
+<p>
+  This course is delivered in two parts:
+</p>
+<ul>
+  <li>Pre-classroom learning consists of video and print materials hosted in the Moodle virtual learning environment and studied independently</li>
+</ul>
+<ul>
+  <li>The half-day classroom session consists of a practical challenge workshop to consolidate the material covered in the pre-learning and provide opportunity for reflection, investigation of issues and questions</li>
+</ul>
+
+" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<header id="header" ><div id="headerContent">Practical Stata</div></header>
+<nav id="siteNav">
+<ul>
+   <li id="active"><a href="index.html" class="active daddy main-node">Practical Stata Home</a></li>
+   <li><a href="getting_started.html" class="no-ch">Getting Started</a></li>
+   <li><a href="opening_a_stata_dataset.html" class="no-ch">Opening a Stata Dataset</a></li>
+   <li><a href="import_data.html" class="no-ch">Import Data</a></li>
+   <li><a href="stata_syntax.html" class="no-ch">Stata Syntax</a></li>
+   <li><a href="do_files_and_log_files.html" class="no-ch">Do Files and Log Files</a></li>
+   <li><a href="generating_variables.html" class="no-ch">Generating Variables</a></li>
+   <li><a href="labelling_variables_and_values.html" class="no-ch">Labelling variables and values</a></li>
+   <li><a href="data_preparation.html" class="no-ch">Data Preparation</a></li>
+   <li><a href="summary_statistics_tabstat.html" class="no-ch">Summary statistics: tabstat</a></li>
+   <li><a href="summary_statistics_summarize.html" class="no-ch">Summary statistics: summarize</a></li>
+   <li><a href="the_class_room_session.html" class="no-ch">The Class Room Session</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="getting_started.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Practical Stata Home</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id27">
+<div class="iDevice emphasis0">
+<div id="ta27_85" class="block iDevice_content">
+<p>In the following learning package some topics contain a link to a video that explains some Stata functionality, guidance on Stata commands and functions and perhaps PDF material to read.  For some topics there may also be <em>activities</em> for you to explore on your own, <em>quizzes</em> that give instant feedback and <em>exercises</em> for you to practise using Stata.</p>
+<p>Before attending the classroom Stata session, you must complete all the topics.  You will also find it useful to take notes.</p>
+<p>If in completing a topic you create a script, you should ensure that you put commentary in the script so that you can understand it later.</p>
+<p>You can use stata on UCL managed machines in public spaces or on the UCL remote desktop when you have an internet connection.  You do not need to download or install Stata to complete this learning.</p>
+<p>You navigate topics using the expandable tree to the left of the content.</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper objectivesIdevice em_iDevice" id="id53">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Objectives</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta53_42_2" class="block iDevice_content">
+<h2>Aim:</h2>
+<p>To be able to undertake elementary data management and statistical analyses in Stata</p>
+<h2>Objectives:</h2>
+<p>After taking this course you will be able to</p>
+<ul>
+<li>Identify major elements of the Stata interface</li>
+<li>Import data in some common formats</li>
+<li>Compute new variables</li>
+<li>Add labels to a dataset to make it self-documenting</li>
+<li>Recode variables and derive new variables from existing ones</li>
+<li>Produce summary statistics, tables and graphs</li>
+<li>Find online help about a given topic or command</li>
+<li>Keep a record of you work and ensure it is reproducible</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionIdevice em_iDevice" id="id63">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Are you ready to go?</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta63_92" class="block iDevice_content">
+<h2>Pre-requisite knowledge</h2>
+<p>This course assumes that you have some knowledge and skills before you start.  For example, it assumes that you know some statistics:</p>
+<ul>
+<li>descriptive statistics such as measures of
+<ul>
+<li>location</li>
+<li>dispersion</li>
+<li>shape</li>
+</ul>
+</li>
+<li>the use of graphs and plots</li>
+<li>the different kinds of data that are analysed statistically such as</li>
+<ul>
+<li>continuous versus discrete data</li>
+<li>ordinal versus ration data (and the other levels of measurement)</li>
+</ul>
+<li>an understanding of hypothesis testing, significance and confidence intervals</li>
+</ul>
+<h2>Digital Capabilities</h2>
+<p>It also assumes that you have basic computing skills such as file management and using a text editor or word processing program.</p>
+<h2>Learning online</h2>
+<p>The course also assumes that you are comfortable with online learning.  What previous experience of online learning do you have?  How did you find any previous online learning experiences?  Did you enjoy them?  What are the challenges of on-line learning for you and what are the advantages?</p>
+<h2>Ready to go?</h2>
+<p>Take a moment to think about the objectives of the course and some of the assumptions outlined above.  Do you understand the objectives and do they correspond to what you want from the course? Do you have the kind of pre-knowledge that the course assumes?</p>
+</div>
+<form name="feedback-form-63_93" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedback63_93text = "Show Feedback";</script><input type="button" name="toggle-feedback-63_93" value="Show Feedback" class="feedbackbutton" onclick="$exe.toggleFeedback(this,true);return false" /></p>
+</div>
+<section id="feedback-63_93" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Feedback</h1>
+<h2>Being prepared</h2>
+<p>Anyone is welcome to follow this on-line course, but you will get most from it if you are more confident about the material that we assume you know.  Below are some links that may help you if you want to review the skills and knowledge you need before you do this course.</p>
+<h2>Statistical knowledge</h2>
+<p>If you find that you are uncertain about the statistical knowledge the course assumes, then you may find the following links useful</p>
+<h4 id="yui_3_17_2_3_1442995440272_5601"><a id="yui_3_17_2_3_1442995440272_5600" href="http://www.gla.ac.uk/sums/users/jdbmcdonald/PrePost_TTest/instruct1.html" target="_blank">Statistics Tutorials from the University of Glasgow</a></h4>
+<h4 id="yui_3_17_2_3_1442995440272_5632"><a id="yui_3_17_2_3_1442995440272_5631" href="http://en.wikibooks.org/wiki/Statistics_Ground_Zero" target="_blank">Statistics ground zero: a wikibook for absolute beginners </a></h4>
+<h3><span style="font-size: xx-large;">Digital Capabilities</span></h3>
+<p>If you want to reassure yourself about your basic digital skills then you may find this link useful</p>
+<p><a target="_blank" href="http://www.ctdlc.org/remediation/index.html">Basic Online Skills</a></p>
+<h2>Online learning</h2>
+<p>If you want to find out more about getting the best from online learning, you may find this link useful</p>
+<p id="title"><a target="_blank" href="https://moodle.ucl.ac.uk/course/view.php?id=34285">Learning With Technology at UCL</a>.</p>
+<p></p></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="getting_started.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

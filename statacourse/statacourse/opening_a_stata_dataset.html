@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Opening a Stata Dataset | Practical Stata </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jim Tyson" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<header id="header" ><div id="headerContent">Practical Stata</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Practical Stata Home</a></li>
+   <li><a href="getting_started.html" class="no-ch">Getting Started</a></li>
+   <li id="active"><a href="opening_a_stata_dataset.html" class="active no-ch">Opening a Stata Dataset</a></li>
+   <li><a href="import_data.html" class="no-ch">Import Data</a></li>
+   <li><a href="stata_syntax.html" class="no-ch">Stata Syntax</a></li>
+   <li><a href="do_files_and_log_files.html" class="no-ch">Do Files and Log Files</a></li>
+   <li><a href="generating_variables.html" class="no-ch">Generating Variables</a></li>
+   <li><a href="labelling_variables_and_values.html" class="no-ch">Labelling variables and values</a></li>
+   <li><a href="data_preparation.html" class="no-ch">Data Preparation</a></li>
+   <li><a href="summary_statistics_tabstat.html" class="no-ch">Summary statistics: tabstat</a></li>
+   <li><a href="summary_statistics_summarize.html" class="no-ch">Summary statistics: summarize</a></li>
+   <li><a href="the_class_room_session.html" class="no-ch">The Class Room Session</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="getting_started.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="import_data.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Opening a Stata Dataset</h1></header>
+<article class="iDevice_wrapper objectivesIdevice em_iDevice" id="id77">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Learning in this topic</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta77_77_2" class="block iDevice_content">
+<p>The objective of this topic is to learn to load Stata datasets whether focally or from a remote source.</p>
+<p>Loading data from remote sources is an important technique and can be part of a strategy to <strong>treat data as read only</strong>.</p>
+<p>The essential activity in this topic is watching the video material and then completing the activity to download a data set from a remote source.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id16">
+<div class="iDevice emphasis0">
+<div id="ta16_85" class="block iDevice_content">
+<p>Please watch <a target="_blank" href="http://tinyurl.com/statabook3">this video</a> which explains how to open and save Stata datasets.</p>
+<p>The format of files with the extension <em>.dta</em><em></em> is the proprietary Stata format.  If you use the bare <em>save</em> command, this is the format that Stata will save in.</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper activityIdevice em_iDevice" id="id38">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Downloading a Stata dataset from a web address</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta38_58_2" class="block iDevice_content">
+<p>Using the documents attached below from Stata's help, load the data set <em>results.dta</em> which is stored on the website</p>
+<p style="margin-left: 30px;"><strong><em>http://www.ucl.ac.uk/~ccaajim</em></strong></p>
+<p>You will need to understand the commands <em>webuse set</em> and <em>webuse</em>.</p>
+<p><em><strong>Webuse</strong> <strong>set</strong></em> is used to tell Stata to use a specific <em>url</em> (web address) as the source of data files.</p>
+<p><strong><em>Webuse</em> </strong>is used to download a data file from a website in to Stata memory.</p>
+<p>The first command therefor, is followed by the website address.  The second command is followed by the name of the datafile.</p>
+<p>A full description of each command is found the manual links below.</p>
+<p></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice" id="id37">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Stata Manual Chapter</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta37_82" class="block iDevice_content">
+<p>Here are the Stata 13 manual chapter that describes opening and saving datasets and a page from the manual describing the <em>webuse</em> command.</p>
+</div>
+<ul class='exeFileList'><li><a href='gsw5.pdf' target='_blank'>Stata Manual Chapter Five<span> (New Window)</span></a></li>
+<li><a href='dwebuse.pdf' target='_blank'>Stata webuse instructions<span> (New Window)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper ReflectionIdevice em_iDevice" id="id71">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Opening a remote dataset</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta71_92" class="block iDevice_content">
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta38_58_2" class="block iDevice_content">
+<p>Using the documents attached below from Stata's help, load the data set <em>results.dta</em> which is stored on the website</p>
+<p>http://www.ucl.ac.uk/~ccaajim</p>
+<p>You will need to understand the commands <em>webuse set</em> and <em>webuse</em>.  The recommended solution is in the feedback.</p>
+</div>
+</div>
+</div>
+</div>
+<form name="feedback-form-71_93" action="#" onsubmit="return false" class="feedback-form">
+<div class="block iDevice_buttons feedback-button js-required">
+<p><script type="text/javascript">var feedback71_93text = "Show Feedback";</script><input type="button" name="toggle-feedback-71_93" value="Show Feedback" class="feedbackbutton" onclick="$exe.toggleFeedback(this,true);return false" /></p>
+</div>
+<section id="feedback-71_93" class="feedback js-feedback js-hidden">
+<h1 class="js-sr-av">Feedback</h1>
+<p>First, redirect the <em>webuse</em> command to the correct source:</p>
+<p><code>webuse set "http://www.ucl.ac.uk/~ccaajim"</code></p>
+<p>Now you can use <em>webuse</em> to download the file</p>
+<p><code>webuse results.dta</code></p>
+<p>You can check that the data has been loaded by looking at the variables pane.</p></section>
+</form>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="getting_started.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="import_data.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

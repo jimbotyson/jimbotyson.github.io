@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Generating Variables | Practical Stata </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jim Tyson" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<header id="header" ><div id="headerContent">Practical Stata</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Practical Stata Home</a></li>
+   <li><a href="getting_started.html" class="no-ch">Getting Started</a></li>
+   <li><a href="opening_a_stata_dataset.html" class="no-ch">Opening a Stata Dataset</a></li>
+   <li><a href="import_data.html" class="no-ch">Import Data</a></li>
+   <li><a href="stata_syntax.html" class="no-ch">Stata Syntax</a></li>
+   <li><a href="do_files_and_log_files.html" class="no-ch">Do Files and Log Files</a></li>
+   <li id="active"><a href="generating_variables.html" class="active no-ch">Generating Variables</a></li>
+   <li><a href="labelling_variables_and_values.html" class="no-ch">Labelling variables and values</a></li>
+   <li><a href="data_preparation.html" class="no-ch">Data Preparation</a></li>
+   <li><a href="summary_statistics_tabstat.html" class="no-ch">Summary statistics: tabstat</a></li>
+   <li><a href="summary_statistics_summarize.html" class="no-ch">Summary statistics: summarize</a></li>
+   <li><a href="the_class_room_session.html" class="no-ch">The Class Room Session</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="do_files_and_log_files.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="labelling_variables_and_values.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Generating Variables</h1></header>
+<article class="iDevice_wrapper objectivesIdevice em_iDevice" id="id84">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Learning in this topic</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta84_84_2" class="block iDevice_content">
+<p>The objective of this topic is to learn about creating new variables in Stata.  You might create a variable for a number of reasons.  For example,</p>
+<ul>
+<li>as a <em>row aggregate</em> - for example an average of several temperature measures for each patient in your study</li>
+<li>as a transformation of an existing variable - for example taking the log of a variable to mitigate the effect of skewness</li>
+<li>as a sub-setting action on an existing variable - for instance dividing subjects into groups <em>low</em>, <em>mid</em> and <em>high</em> based on an existing numeric income score</li>
+</ul>
+<p>The essential activities in this topic are reading the explanations of gen and egen and then carrying out the activity<em> Generating a continuous and a ranked variable.<br /></em>.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id21">
+<div class="iDevice emphasis0">
+<div id="ta21_85" class="block iDevice_content">
+<p>Please watch <a target="_blank" href="http://tinyurl.com/statabook7">this video</a>.</p>
+<h2>gen</h2>
+<p>The <em>gen</em> command (shortened form of <em>generate</em>) can be used to create a new variable with</p>
+<ul>
+<li>missing values<br />gen newvar = .</li>
+<li>a specific value<br />gen newvar = 0</li>
+<li>a calculated value<br />gen newvar = (oldvar1 + oldvar)/oldvar3<br />(almost any mathematical expression)</li>
+</ul>
+<p>So using the data from <em>results.dta</em> we could use the command</p>
+<p><code>gen avxm=(maths+english+history)/3</code></p>
+<p>to generate a new variable containing the average of the three examination scores in the dataset.</p>
+<h2>egen</h2>
+<p>The <em>egen</em> provides some extensions to <em>generate</em>.  The complete functionality can be found in the <a target="_blank" href="http://www.stata.com/help.cgi?egen"><em>egen help</em></a> but here is the code that produces the average exam score again, using <em>egen</em></p>
+<p><code>egen avxm=rowmean(maths english history)</code></p>
+<p>One useful variation on <em>egen</em> is to use it with the options <em>cut</em> and <em>icodes</em>. Suppose that having created <em>avxm</em> we want to assign cases to <em>grades</em> with the following rule:</p>
+<pre style="margin-left: 30px;">avxm=0 to avxm&lt;50 go into grade = 0<br />avxm&gt;=50 to avxm&lt;60 go into grade = 1<br />avxm&gt;=60 to avxm=100 go into grade 2</pre>
+<p>the code to do this is</p>
+<p><code>egen grade = cut(avxm), at(0 50 60 101) icodes</code></p>
+<p>The last value in the option <em>at()</em> must be greater than the highest value in the data (or rather, possible in the data).  The option <em>icodes</em> gives each level of the resulting variable grade an integer value.  Without <em>icodes</em> the new variable would have as its value the <strong>left margin</strong> of each range.</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper activityIdevice em_iDevice" id="id72">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Generating a continuous and a ranked variable</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta72_42_2" class="block iDevice_content">
+<p>Download the dataset <em>results.dta</em> if you don't already have it in memory.  The code is</p>
+<p><code>webuse set http://www.ucl.ac.uk/~ccaajim</code></p>
+<p><code> webuse results</code></p>
+<p>Now create the average exam score variable <em>avxm</em> as explained and run the code given in the section on <em>egen</em> above to create the <em>grade</em> variable.  Check the results by listing or browsing through data.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice" id="id47">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Stata Manual Pages</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta47_82" class="block iDevice_content">
+<p>The  files attached below will help you to understand the <em>generate</em> command and the <em>replace</em> command and options.</p>
+</div>
+<ul class='exeFileList'><li><a href='dgenerate.pdf' target='_blank'>Stata Manual: generate<span> (New Window)</span></a></li>
+<li><a href='gsw11.pdf' target='_blank'>Stata Manual: generate and replace<span> (New Window)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="do_files_and_log_files.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="labelling_variables_and_values.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>

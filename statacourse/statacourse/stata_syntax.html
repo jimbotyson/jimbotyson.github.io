@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>Stata Syntax | Practical Stata </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Jim Tyson" />
+<meta name="generator" content="eXeLearning 2.1 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript">$exe_i18n={previous:"Previous",next:"Next",show:"Show",hide:"Hide",showFeedback:"Show Feedback",hideFeedback:"Hide Feedback",correct:"Correct",incorrect:"Incorrect",menu:"Menu",print:"Print"}</script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" /></head>
+<body class="exe-web-site"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Skip navigation</a></p>
+<header id="header" ><div id="headerContent">Practical Stata</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Practical Stata Home</a></li>
+   <li><a href="getting_started.html" class="no-ch">Getting Started</a></li>
+   <li><a href="opening_a_stata_dataset.html" class="no-ch">Opening a Stata Dataset</a></li>
+   <li><a href="import_data.html" class="no-ch">Import Data</a></li>
+   <li id="active"><a href="stata_syntax.html" class="active no-ch">Stata Syntax</a></li>
+   <li><a href="do_files_and_log_files.html" class="no-ch">Do Files and Log Files</a></li>
+   <li><a href="generating_variables.html" class="no-ch">Generating Variables</a></li>
+   <li><a href="labelling_variables_and_values.html" class="no-ch">Labelling variables and values</a></li>
+   <li><a href="data_preparation.html" class="no-ch">Data Preparation</a></li>
+   <li><a href="summary_statistics_tabstat.html" class="no-ch">Summary statistics: tabstat</a></li>
+   <li><a href="summary_statistics_summarize.html" class="no-ch">Summary statistics: summarize</a></li>
+   <li><a href="the_class_room_session.html" class="no-ch">The Class Room Session</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="import_data.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="do_files_and_log_files.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">Stata Syntax</h1></header>
+<article class="iDevice_wrapper objectivesIdevice em_iDevice" id="id80">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Learning in this topic</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta80_80_2" class="block iDevice_content">
+<p>The objective of this topic is to learn the basic, general syntax of Stata commands - what all commands will have in common.</p>
+<p>Getting the format of basic commands under your belt will make using Stata more pleasurable and much faster.  In particular you should notice that a command has the general form:</p>
+<pre>command variable variable...variable, options<br /><br /></pre>
+<p>That is the variables passed to the command appear as a list separated by spaces and a comma precedes the list of options.</p>
+<p>The essential activity in this topic is watching the video material and then working through the UCLA web page in <em>Overview of Stata Syntax</em>.</p>
+<p>To try the example code in this topic, you will need to read the file <em>results.xlsx</em> from the website <em>http://www.ucl.ac.uk/~ccaajim/results.xls</em></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FreeTextIdevice" id="id66">
+<div class="iDevice emphasis0">
+<div id="ta66_85" class="block iDevice_content">
+<p>We call the structure of a Stata command the <em>Stata syntax</em> borrowing a term from grammar and computer programming.  The resources in this section will help you understand the common structure of Stata commands and show you examples of specific useful commands.</p>
+<p>Some of the most common commands are those that operate on variables.  Their general form is</p>
+<p><code>command varlist , options</code></p>
+<p>The elements are <em>varlist</em> are variable names which are separated by spaces.  The options follow a single comma and are specified in the help for each command.</p>
+<p>So</p>
+<p><code>summarize maths english, detail</code></p>
+<p>provides detailed summary statistics for the variables <em>maths</em> and <em>english</em>.</p>
+<p>Often you can use the <em>bysort</em> command to group output by factors.  For example</p>
+<p><code>bysort sex: summarize maths, detail</code></p>
+<p>(There is also a <em>by</em> prefix command but to use it you must first sort by factor).</p>
+<p>One command you need to start using right away is <em>list</em>.  <em>List</em> displays selections from the data in memory.  The bare <em>list</em> will show all variables for all cases.  But you can <em></em>specify which variables to display in the <em>varlist</em> and you can use the <em>if</em> option to make selections of cases.</p>
+<p>So you can</p>
+<p>list surname maths, if maths&gt;100</p>
+<p>for example.</p>
+<p>Try the following command</p>
+<p>list in 1/5</p>
+<p>Please watch <a target="_blank" href="http://tinyurl.com/statabook5">this video</a> which explains the <em>syntax</em> of Stata commands.</p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper FileAttachIdeviceInc em_iDevice" id="id46">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Stata Cheat Sheets</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta46_82" class="block iDevice_content">
+<p>Below are two stata command guides.  One is a quite long and comprehensive document and the other is a brief two page guide.  You may find either or both useful.</p>
+</div>
+<ul class='exeFileList'><li><a href='UsefulStataCommands.pdf' target='_blank'>Stata Cheat Sheet - Long<span> (New Window)</span></a></li>
+<li><a href='TwoPageStata.pdf' target='_blank'>Stata Cheat Sheet - Brief<span> (New Window)</span></a></li>
+</ul></div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper activityIdevice em_iDevice" id="id50">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Overview of Stata Syntax</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta50_48_2" class="block iDevice_content">
+<p>Please work through <a target="_blank" href="http://www.ats.ucla.edu/stat/stata/modules/syntax.htm">this web page</a> in Stata to improve your understanding of the syntax of Stata commands.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper activityIdevice em_iDevice" id="id75">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header"><h1 class="iDeviceTitle">Activity</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta75_42_2" class="block iDevice_content">
+<p>Open the <em>results</em> dataset.  (The command was given in the section on <em>Opening a Stata Dataset</em>).</p>
+<p>How many cases are in each of the following selections?</p>
+<p><code>list surname sex class if sex==1</code></p>
+<p><code>list surname sex class if sex==2</code></p>
+<p><code>list surname sex class if sex==1 &amp; class==1</code></p>
+<p><code>list surname sex class if sex==1 &amp; class==2</code></p>
+<p><code>list surname sex class if sex==1 &amp; class==3</code></p>
+<p><code>list surname sex class if sex==2 &amp; class==1</code></p>
+<p><code>list surname sex class if sex==2 &amp; class==2</code></p>
+<p><code>list surname sex class if sex==2 &amp; class==3</code></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="import_data.html" class="prev"><span><span>&laquo; </span>Previous</span></a> <span class="sep">| </span><a href="do_files_and_log_files.html" class="next"><span>Next<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_fpd_js.js"></script></body></html>
